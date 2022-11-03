@@ -37,18 +37,19 @@ const gameResult_El = document.getElementById("game-result");
 /*** VARIABILI PUNTEGGIO GIOCO *************************/
 
 //roll utente
-let userRoll
+let userRoll_1
+//roll utente
+let userRoll_2
 //punteggio utente
-let userScore //=userRoll
+let userScore //=userRoll_1
 
 
 //rolla automentico
-let autoRoll
+let autoRoll_1
+let autoRoll_2
 //punteggio 
-let autoScore = autoRoll
+let autoScore = autoRoll_1
 
-//user score > === <  auto score
-const gameResult = false
 
 /*** ARRAY *************************/
 const diceIcons = [``//lascio uno spazio vuoto per lo 0 perchè sui dadi non è presente
@@ -69,18 +70,20 @@ const diceIcons = [``//lascio uno spazio vuoto per lo 0 perchè sui dadi non è 
 btnGameStart_input.addEventListener("click", function () {
 
     //userRol= valore random 1-6
-    userRoll = Math.floor(Math.random() * 6 + 1);
+    userRoll_1 = Math.floor(Math.random() * 6 + 1);
+    userRoll_2 = Math.floor(Math.random() * 6 + 1);
 
-    userScore = userRoll
-    //console.log(userRoll);
-    alert(`HAI FATTO : ${userRoll}`);// _____________l'ALERT è PROPRIO BRUTTINO DA VEDERE
+    userScore = userRoll_1+userRoll_2
+    console.log(userRoll_1,"+", userRoll_2 ,"===", userScore );
+    alert(`HAI FATTO : ${userRoll_1} + ${userRoll_2} = ${userScore} `);// _____________l'ALERT è PROPRIO BRUTTINO DA VEDERE
 
     //console.log(userScoreContainer_El);
 
-    /* iserisco il dato dell'array con la posizione === userRoll */
+    /* iserisco il dato dell'array con la posizione === userRoll_1 */
     userScoreContainer_El.innerHTML = `
-    ${diceIcons[userRoll]}
-<h3> PUNTEGGIO UTENTE: ${userScore}</h3>`
+<h2>UTENTE</h2>
+${diceIcons[userRoll_1]} + ${diceIcons[userRoll_2]}
+<h4> punteggio:${userScore}</h4>`
 
 
 
@@ -91,17 +94,23 @@ btnGameStart_input.addEventListener("click", function () {
 
     /*_______________________________________________VIENE ESEGUITO PRIMA L'ALERT E SOLO SUCCESSIVAMENTE FA INNER HTML ANCHE SE SCRITTO DOPO (ELEMENTO BLOCCANTE) funziona ma non mi piace _______________________________ */
     alert("ORA E' IL MIO TURNO!");
-    // autoRoll= valore random 1-6
-    autoRoll = Math.floor(Math.random() * 6 + 1);
+    // autoRoll_1= valore random 1-6
+    autoRoll_1 = Math.floor(Math.random() * 6 + 1);
+    autoRoll_2 = Math.floor(Math.random() * 6 + 1);
 
-    autoScore = autoRoll
-    //console.log(autoRoll);
-    alert(`HO FATTO : ${autoRoll}`);// _____________l'ALERT è PROPRIO BRUTTINO DA VEDERE
+    autoScore = autoRoll_1+autoRoll_2
+    console.log(autoRoll_1,"+", autoRoll_2 ,"===", autoScore );
+    alert(`HAI FATTO : ${autoRoll_1} + ${autoRoll_2} = ${autoScore} `);// _____________l'ALERT è PROPRIO BRUTTINO DA VEDERE
 
     //console.log(autoScoreContainer_El);
+
+    /* iserisco il dato dell'array con la posizione === autoRoll_1 */
     autoScoreContainer_El.innerHTML = `
-    ${diceIcons[autoRoll]}
-<h3> PUNTEGGIO AVVERSARIO: ${autoScore}</h3>`
+<h2>UTENTE</h2>
+${diceIcons[autoRoll_1]} + ${diceIcons[autoRoll_2]}
+<h4> punteggio:${autoScore}</h4>`
+
+
 
     if (userScore > autoScore) {
         gameResult_El.innerText = ("HAI VINTO!!");
@@ -111,7 +120,7 @@ btnGameStart_input.addEventListener("click", function () {
     } else {
         gameResult_El.innerText = (`HAI PERSO!`);
     }
-    console.log(userRoll, "user roll");
+    console.log(userRoll_1, "user roll");
     /* per mettere l'immagine corrispondente dei dadi tirati a sorte, dovrei fare un array dove inserisco in ordine le icone dei dadi. occhio allo 0=1! */
     /* poi dovrei far ciclare il dato random e quando lo trovo devo fare un innerhtml del dato dell'array */
 
@@ -125,17 +134,17 @@ console.log("console log di elemento 3 di lista dadi", diceIcons[3])
 
 //button_el
 //funzione bottone
-//const userRoll(1)= valore random 1-6
-//_____________________________const userRoll(2)= valore random 1-6 se sono due
-//const user-score= userRoll(1)+autoroll(2)
+//const userRoll_1(1)= valore random 1-6
+//_____________________________const userRoll_1(2)= valore random 1-6 se sono due
+//const user-score= userRoll_1(1)+autoroll_1(2)
 //____________________________user-score-container //innerHTML dado corrispondente
 //user-score-text_el //inner text
 
 //esce un allert l'utente fa clic
 //_________________________?? posso mettere un immagine nell'alert??? proviamo
-//const autoRoll= valore random 1-6
-//_____________________________const autoRoll(2)= valore random 1-6 se sono due
-//const auto-score= autoRoll(1) ______ +autoRoll(2)
+//const autoRoll_1= valore random 1-6
+//_____________________________const autoRoll_1(2)= valore random 1-6 se sono due
+//const auto-score= autoRoll_1(1) ______ +autoRoll_1(2)
 //____________________________auto-score-container //innerHTML dado corrispondente
 //auto-score-text_el //inner text
 
