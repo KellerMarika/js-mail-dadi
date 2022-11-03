@@ -32,35 +32,38 @@
 <body>
 
     <section>
-        <div class="container text-center">
-            <h1>Giochiamo!</h1>
-            <h2 id="">tira un dado</h2>
+        <div class="container">
+            <div id="start-container">
+                <h1>Giochiamo!</h1>
+                <h2 id="">tira un dado</h2>
 
-            <form action="get">
-                <fieldset>
-                    <!-- quando clicco il bottone sparisce  e appare l'immaginedi un dado con sopra il numero random-->
-                    <button type="button" name="user-button" id="user-button">
-                        <i class="fa-solid fa-dice"></i>
-                    </button>
-                </fieldset>
+                <form action="get">
+                    <fieldset>
+                        <!-- quando clicco il bottone sparisce  e appare l'immaginedi un dado con sopra il numero random-->
+                        <button type="button" name="user-button" id="user-btn">
+                            <i class="fa-solid fa-dice"></i>
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="score-container" class="row row-cols-2">
+                <div id="user-score-container">
+                    <i class="fa-solid fa-dice-one"></i>
+                     <!-- faccia dado corrispondente *2-->
+                  <h3 id="user-score-text"> inner text </h3>
+                   <!--  ________________________ma se devo innerare anche i dadi, non ho bi sogno di un altro elemento, butto tutto dentro e amen --> 
 
-                <div id="score-container" class="row row-cols-2">
-                    <div class="user-score-container">
-                        <p>dado corrispondente </p><!-- *2 -->
-                        <!-- faccia dado corrispondente -->
-                        <h3 id="user-score-text"> inner text </h3>
-
-                    </div>
-                    <div class="auto-score-container">
-                        <!-- faccia del dado -->
-                        <p>dado corrispondente</p>
-                        <h3 id="auto-score-text"> inner text </h3>
-                    </div>
                 </div>
-                <div>
-                    <h1 id="game-result">inner text </h1>
+                <div id="auto-score-container">
+                    <i class="fa-solid fa-dice-one"></i>
+                    <!-- faccia del dado -->
+                    <h3 id="user-score-text"> inner text </h3>
+             
                 </div>
-            </form>
+            </div>
+            <div>
+                <h1 id="game-result">inner text </h1>
+            </div>
         </div>
     </section>
 
