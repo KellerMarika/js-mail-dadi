@@ -1,7 +1,63 @@
-*{
-    border: 1px solid red;
+* {
     text-align: center;
+
+
 }
-button i{
+
+body {
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+
+section {
+    padding-top: 10vh;
+}
+
+h1 {
     font-size: 100px;
+}
+
+h2 {
+    font-size: 90px;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+i {
+    font-size: 5rem;
+}
+
+#user-btn {
+    color: rgb(230, 230, 230);
+    background-color: transparent;
+    padding: 20px;
+    transition: .3s;
+    border: 0;
+
+}
+
+#user-btn i {
+    font-size: 6rem;
+    text-shadow: 2px 2px 1px black;
+}
+
+#user-btn:hover {
+    transform: rotate(-360deg) scale(130%);
+}
+
+.my_color-danger {
+    color:#ff3f3f;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px 10px black;
+}
+
+.my-fs{
+    font-size: 75px;
 }
